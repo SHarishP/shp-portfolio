@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "shp-portfolio",
   "private": true,
   "scripts": {
     "build": "turbo run build",
