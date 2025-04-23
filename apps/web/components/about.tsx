@@ -34,7 +34,7 @@ const About = ({ isDarkMode }: DarkModeProps) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex w-full flex-col lg:flex-row items-center gap-20 my-20"
+        className="flex w-full flex-col lg:flex-row items-center gap-20 my-10"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -55,10 +55,10 @@ const About = ({ isDarkMode }: DarkModeProps) => {
           className="flex-1"
         >
           <p className="mb-10 max-w-2xl font-ovo">
-            I am an experienced Frontend Developer with over a decade of
-            professional expertise in the field. Throughout my career, I have
-            had the privilage of collaborating with prestigious organizations,
-            contributing to their success and growth.
+            I am a Fullstack Web Developer with a background in construction
+            project management, now dedicated to building modern, scalable web
+            applications. I focus on creating user-centric applications that
+            improve efficiency and deliver meaningful impact.
           </p>
 
           <motion.ul

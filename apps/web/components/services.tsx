@@ -36,8 +36,8 @@ const Services = ({ isDarkMode }: DarkModeProps) => {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo "
       >
-        I am a frontend developer from California, USA with 10 years of
-        experience in multiple companies like Microsoft, Tesla and Apple.
+        I am a fullstack web developer from Jakarta, Indonesia with experience
+        building user-driven applications.
       </motion.p>
 
       <motion.div
@@ -46,26 +46,23 @@ const Services = ({ isDarkMode }: DarkModeProps) => {
         transition={{ duration: 0.6, delay: 0.9 }}
         className="grid grid-cols-auto gap-6 my-10"
       >
-        {serviceData.map(({ icon, title, description, link }, index) => (
+        {serviceData.map(({ icon, title, description }, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             key={index}
-            className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white"
+            className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white"
           >
-            <Image src={icon} alt="" className="w-10" />
+            <Image
+              src={icon}
+              alt=""
+              className="w-10 border-2 border-black dark:bg-white dark:border-white rounded-lg p-1"
+            />
             <h3 className="text-lg my-4 text-gray-700 font-outfit dark:text-white">
               {title}
             </h3>
             <p className="text-sm text-gray-600 leading-5 font-outfit dark:text-white/80">
               {description}
             </p>
-            <a
-              href={link}
-              className="flex items-center gap-2 text-sm mt-5 font-outfit"
-            >
-              Read more{" "}
-              <Image src={assets.right_arrow} className="w-4" alt="" />
-            </a>
           </motion.div>
         ))}
       </motion.div>

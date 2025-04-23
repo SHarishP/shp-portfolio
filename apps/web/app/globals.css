@@ -4,9 +4,9 @@
 @theme {
   --font-outfit: "Outfit", sans-serif;
   --font-ovo: "Ovo", serif;
-  --color-lightHover: #f5f0f0;
-  --color-darkHover: #2a004a;
-  --color-darkTheme: #11001f;
+  --color-lightHover: #87d0f5;
+  --color-darkHover: #07064a;
+  --color-darkTheme: #1c1c1b;
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
 }
