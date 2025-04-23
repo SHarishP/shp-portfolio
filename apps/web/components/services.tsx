@@ -50,12 +50,12 @@ const Services = ({ isDarkMode }: DarkModeProps) => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             key={index}
-            className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white"
+            className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover/50 dark:hover:shadow-white"
           >
             <Image
               src={icon}
               alt=""
-              className="w-10 border-2 border-black dark:bg-white dark:border-white rounded-lg p-1"
+              className="w-10 border-2 border-black bg-white dark:border-white rounded-lg p-1"
             />
             <h3 className="text-lg my-4 text-gray-700 font-outfit dark:text-white">
               {title}

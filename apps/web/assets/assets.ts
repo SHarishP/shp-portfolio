@@ -6,7 +6,6 @@ import edu_icon_dark from "./edu-icon-dark.png";
 import project_icon from "./project-icon.png";
 import project_icon_dark from "./project-icon-dark.png";
 import vscode from "./vscode.png";
-import firebase from "./firebase.png";
 import figma from "./figma.png";
 import git from "./git.png";
 import mongodb from "./mongodb.png";
@@ -41,6 +40,7 @@ import web from "./web.png";
 import fe from "./fe.png";
 import be from "./be.png";
 import admin from "./admin.png";
+import github from "./github.png";
 
 export const assets = {
   user_image,
@@ -51,7 +51,6 @@ export const assets = {
   project_icon,
   project_icon_dark,
   vscode,
-  firebase,
   figma,
   git,
   mongodb,
@@ -86,28 +85,39 @@ export const assets = {
   fe,
   be,
   admin,
+  github,
 };
 
 export const workData = [
   {
-    title: "Frontend project",
+    title: "Company Profile - Bauen",
     description: "Web Design",
-    bgImage: "/work-1.png",
+    bgImage: "/company-profile.png",
+    github: "https://github.com/SHarishP/bauen-profile",
   },
   {
-    title: "Geo based app",
-    description: "Mobile App",
-    bgImage: "/work-2.png",
+    title: "Event Management",
+    description: "Fullstack Web",
+    bgImage: "/event-management.png",
+    github: "https://github.com/SHarishP/event-management",
   },
   {
-    title: "Photography site",
-    description: "Web Design",
-    bgImage: "/work-3.png",
+    title: "Job Portal - Dream Jobs!",
+    description: "Fullstack Web",
+    bgImage: "/job-portal.png",
+    github: "https://github.com/masdefry/jcwdol01602",
   },
   {
-    title: "UI/UX designing",
+    title: "Clothing Store",
     description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    bgImage: "/shop-profile.png",
+    github: "https://github.com/SHarishP/slicing1ByHarish",
+  },
+  {
+    title: "Portfolio Website",
+    description: "Frontend Web",
+    bgImage: "/portfolio.png",
+    github: "https://github.com/SHarishP/tutorial-portofolio1",
   },
 ];
 
@@ -156,7 +166,7 @@ export const infoList = [
     icon: assets.project_icon,
     iconDark: assets.project_icon_dark,
     title: "Projects",
-    description: "Built more than 3 projects",
+    description: `Built more than ${workData.length - 1} projects`,
   },
 ];
 
@@ -167,4 +177,27 @@ export const toolsData = [
   assets.office,
   assets.figma,
   assets.git,
+];
+
+export const navMenu = [
+  {
+    label: "Home",
+    href: "#top",
+  },
+  {
+    label: "About me",
+    href: "#about",
+  },
+  {
+    label: "Services",
+    href: "#services",
+  },
+  {
+    label: "My Work",
+    href: "#work",
+  },
+  {
+    label: "Contact me",
+    href: "#contact",
+  },
 ];

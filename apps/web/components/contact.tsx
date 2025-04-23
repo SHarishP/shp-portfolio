@@ -4,30 +4,34 @@ import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
+import toast from "react-hot-toast";
 
 const Contact = ({ isDarkMode }: DarkModeProps) => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: any) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+    try {
+      event.preventDefault();
+      const formData = new FormData(event.target);
 
-    formData.append("access_key", "81d92f16-6fb4-4731-9262-7f46a9d2dd30");
+      formData.append("access_key", "81d92f16-6fb4-4731-9262-7f46a9d2dd30");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      const data = await response.json();
+      if (data.success) {
+        toast.success("Form Submitted Successfully", { duration: 2000 });
+        event.target.reset();
+      } else {
+        toast.error("Can not send message", { duration: 3000 });
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      toast.dismiss();
     }
   };
 
@@ -81,7 +85,7 @@ const Contact = ({ isDarkMode }: DarkModeProps) => {
             type="text"
             placeholder="Enter your name"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white font-outfit dark:bg-darkHover/30 dark:border-white/90"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white font-outfit dark:bg-darkHover/10 dark:border-white/90"
             name="name"
           />
           <motion.input
@@ -91,7 +95,7 @@ const Contact = ({ isDarkMode }: DarkModeProps) => {
             type="email"
             placeholder="Enter your email"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white font-outfit dark:bg-darkHover/30 dark:border-white/90"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white font-outfit dark:bg-darkHover/10 dark:border-white/90"
             name="email"
           />
         </div>
@@ -102,7 +106,7 @@ const Contact = ({ isDarkMode }: DarkModeProps) => {
           rows={6}
           placeholder="Enter your message"
           required
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 font-outfit dark:bg-darkHover/30 dark:border-white/90"
+          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 font-outfit dark:bg-darkHover/10 dark:border-white/90"
           name="message"
         ></motion.textarea>
 

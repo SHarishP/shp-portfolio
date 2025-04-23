@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import { ToasterProvider } from "./provider/toastProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body
         className={`${outfit.className} ${ovo.className} antialiased leadiing-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
       >
+        <ToasterProvider />
         {children}
       </body>
     </html>

@@ -4,15 +4,15 @@
 @theme {
   --font-outfit: "Outfit", sans-serif;
   --font-ovo: "Ovo", serif;
-  --color-lightHover: #87d0f5;
-  --color-darkHover: #07064a;
+  --color-lightHover: #bce9f7;
+  --color-darkHover: #0d0442;
   --color-darkTheme: #1c1c1b;
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
 }
 
 @utility grid-cols-auto {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
-import { assets } from "../assets/assets";
+import { assets, navMenu } from "../assets/assets";
 import { NavbarDarkProps } from "../utility/interfaces";
+import { motion } from "motion/react";
 
 const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarDarkProps) => {
   const [isScroll, setIsScroll] = useState(false);
@@ -49,31 +50,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarDarkProps) => {
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white/50 shadow-sm dark:border dark:border-white/50 dark:bg-transparent"}`}
         >
-          <li>
-            <a className="font-ovo" href="#top">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#about">
-              About me
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#services">
-              Services
-            </a>
-          </li>
-          <li>
-            <a className="font-Ovo" href="#work">
-              My Work
-            </a>
-          </li>
-          <li>
-            <a className="font-Ovo" href="#contact">
-              Contact me
-            </a>
-          </li>
+          {navMenu.map((data, index) => (
+            <motion.li key={index} whileHover={{ scale: 1.05 }}>
+              <a href={data.href} className="font-ovo">
+                {data.label}
+              </a>
+            </motion.li>
+          ))}
         </ul>
 
         <div className="flex items-center gap-4 ">
@@ -115,7 +98,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarDarkProps) => {
         {/* Mobile menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white"
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-lightHover transition duration-500 dark:bg-darkHover dark:text-white"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image
@@ -124,31 +107,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarDarkProps) => {
               className="w-5 cursor-pointer"
             />
           </div>
-          <li>
-            <a className="font-ovo" href="#top" onClick={closeMenu}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#about" onClick={closeMenu}>
-              About me
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#services" onClick={closeMenu}>
-              Services
-            </a>
-          </li>
-          <li>
-            <a className="font-Ovo" href="#work" onClick={closeMenu}>
-              My Work
-            </a>
-          </li>
-          <li>
-            <a className="font-Ovo" href="#contact" onClick={closeMenu}>
-              Contact me
-            </a>
-          </li>
+          {navMenu.map((data, index) => (
+            <motion.li whileHover={{ scale: 1.05 }} key={index}>
+              <a href={data.href} onClick={closeMenu}>
+                {data.label}
+              </a>
+            </motion.li>
+          ))}
         </ul>
       </nav>
     </>
