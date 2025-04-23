@@ -1,15 +1,27 @@
 import Image from "next/image";
-import React from "react";
+import { useDarkMode } from "../utility/darkModeContext";
 import { assets } from "../assets/assets";
-import { DarkModeProvider, useDarkMode } from "../utility/darkModeContext";
-import LogoMail from "./footer/logoMail";
 
 const Footer = () => {
+  const { isDarkMode } = useDarkMode();
   return (
     <div className="mt-20">
-      <DarkModeProvider>
-        <LogoMail />
-      </DarkModeProvider>
+      <div className="text-center ">
+        <Image
+          src={isDarkMode ? assets.logo_dark : assets.logo}
+          alt=""
+          className="w-36 mx-auto mb-2"
+        />
+
+        <div className="w-max flex items-center gap-2 mx-auto font-outfit">
+          <Image
+            src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon}
+            alt=""
+            className="w-6"
+          />
+          setiawanharish85@gmail.com
+        </div>
+      </div>
 
       <div className="font-outfit text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
         <p>© 2025 Setiawan Harish P. All rights reserved.</p>
