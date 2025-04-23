@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
-import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
 import toast from "react-hot-toast";
 
