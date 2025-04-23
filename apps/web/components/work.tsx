@@ -1,11 +1,9 @@
 import React from "react";
 import { assets, workData } from "../assets/assets";
 import Image from "next/image";
-import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
-import { a } from "motion/react-client";
 
-const Work = ({ isDarkMode }: DarkModeProps) => {
+const Work = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

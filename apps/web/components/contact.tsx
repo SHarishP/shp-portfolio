@@ -6,7 +6,7 @@ import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
 import toast from "react-hot-toast";
 
-const Contact = ({ isDarkMode }: DarkModeProps) => {
+const Contact = () => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: any) => {

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import { assets, infoList, toolsData } from "../assets/assets";
-import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
+import { DarkModeProvider, useDarkMode } from "../utility/darkModeContext";
+import InfoList from "./about/infoList";
 
-const About = ({ isDarkMode }: DarkModeProps) => {
+const About = () => {
   return (
     <motion.div
       id="about"
@@ -65,27 +66,10 @@ const About = ({ isDarkMode }: DarkModeProps) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
           >
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
-              <motion.li
-                whileHover={{ scale: 1.05 }}
-                key={index}
-                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
-              >
-                <Image
-                  src={isDarkMode ? iconDark : icon}
-                  alt={title}
-                  className="w-7 mt-3"
-                />
-                <h3 className="my-4 font-semibold text-gray-700 font-outfit dark:text-white">
-                  {title}
-                </h3>
-                <p className="text-grau-600 text-sm font-outfit dark:text-white/80">
-                  {description}
-                </p>
-              </motion.li>
-            ))}
+            <DarkModeProvider>
+              <InfoList />
+            </DarkModeProvider>
           </motion.ul>
 
           <motion.h4

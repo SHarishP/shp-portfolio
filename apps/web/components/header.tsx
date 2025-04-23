@@ -1,11 +1,9 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { assets } from "../assets/assets";
-import { DarkModeProps } from "../utility/interfaces";
 import { motion } from "motion/react";
 
-const Header = ({ isDarkMode }: DarkModeProps) => {
+const Header = () => {
   return (
     <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <motion.div
