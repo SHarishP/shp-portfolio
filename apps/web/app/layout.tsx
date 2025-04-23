@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToasterProvider } from "./provider/toastProvider";
 import { DarkModeProvider } from "../utility/darkModeContext";
 
+
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
